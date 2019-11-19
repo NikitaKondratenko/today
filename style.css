@@ -29,20 +29,48 @@ header button {
   color: rgba(0, 0, 0, 0.7);
 }
 
-header button:hover {
+header button:hover, header button:active, header button:focus {
   -webkit-box-shadow: 0 0px 3px rgba(0, 0, 0, 0.2);
           box-shadow: 0 0px 3px rgba(0, 0, 0, 0.2);
 }
 
-.content-item__todo {
-  width: 474px;
-  height: 33px;
-  padding: 16px 16px 16px 60px;
+header button:active, header button:focus {
+  border: none;
+  outline: none;
+}
+
+.header-content {
+  width: auto;
+  height: auto;
   background-color: #fff;
-  background: rgba(0, 0, 0, 0.03);
-  background-color: #FEFEFE;
   -webkit-box-shadow: inset 0 -1px 1px rgba(0, 0, 0, 0.1);
           box-shadow: inset 0 -1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.fa-trash {
+  font-size: 19px;
+  color: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  margin: -43px 0 0 500px;
+  cursor: pointer;
+  color: rgba(175, 47, 47, 0.15);
+  -webkit-transition: .2s;
+  transition: .2s;
+  padding: 5px;
+}
+
+.fa-trash:hover, .fa-trash:active, .fa-trash:focus {
+  color: rgba(175, 47, 47, 0.5);
+}
+
+.newTodoList {
+  width: 474px;
 }
 
 input {
@@ -58,7 +86,6 @@ input {
 }
 
 input:active, input:focus {
-  border: 1px solid rgba(0, 0, 0, 0.3);
   outline: none;
 }
 

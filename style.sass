@@ -23,18 +23,35 @@ header
     border-radius: 3px
     cursor: pointer
     color: rgba(0, 0, 0, 0.7)
-    &:hover
+    &:hover,&:active,&:focus
       box-shadow: 0 0px 3px rgba(0,0,0,0.2)
+    &:active,&:focus
+      border: none
+      outline: none
 
-.content
-  &-item__todo
-    width: 474px
-    height: 33px
-    padding: 16px 16px 16px 60px
+.header
+  &-content
+    width: auto
+    height: auto
     background-color: #fff
-    background: rgba(0, 0, 0, 0.03)
-    background-color: #FEFEFE
     box-shadow: inset 0 -1px 1px rgba(0,0,0,0.1)
+
+.fa-trash
+  font-size: 19px
+  color: #000
+  display: flex
+  align-items: center
+  position: absolute
+  margin: -43px 0 0 500px
+  cursor: pointer
+  color: rgba(175, 47, 47, 0.15)
+  transition: .2s
+  padding: 5px
+  &:hover,&:active,&:focus
+    color: rgba(175, 47, 47, 0.5)
+
+.newTodoList
+  width: 474px 
 
 input
   width: 400px
@@ -46,7 +63,6 @@ input
   box-shadow: inset 0 -1px 1px rgba(0,0,0,0.1)
   font-size: 24px
   &:active, &:focus
-    border: 1px solid rgba(0,0,0,0.3)
     outline: none
 
 input::-webkit-input-placeholder 
