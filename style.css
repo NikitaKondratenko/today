@@ -1,0 +1,98 @@
+body {
+  font-family: 'Fira Sans', sans-serif;
+  background: #f5f5f5;
+}
+
+.todoapp {
+  width: 550px;
+  margin: 100px auto 0 auto;
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 100px;
+  line-height: 100px;
+  margin: 0 0 20px 0;
+  text-align: center;
+  color: rgba(175, 47, 47, 0.15);
+}
+
+header button {
+  position: absolute;
+  margin: 16px 0px 0 0px;
+  width: 60px;
+  height: 33px;
+  background-color: transparent;
+  border: 1px solid rgba(175, 47, 47, 0.15);
+  border-radius: 3px;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+header button:hover {
+  -webkit-box-shadow: 0 0px 3px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0px 3px rgba(0, 0, 0, 0.2);
+}
+
+.content-item__todo {
+  width: 474px;
+  height: 33px;
+  padding: 16px 16px 16px 60px;
+  background-color: #fff;
+  background: rgba(0, 0, 0, 0.03);
+  background-color: #FEFEFE;
+  -webkit-box-shadow: inset 0 -1px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: inset 0 -1px 1px rgba(0, 0, 0, 0.1);
+}
+
+input {
+  width: 400px;
+  height: 33px;
+  padding: 16px 16px 16px 60px;
+  background: rgba(0, 0, 0, 0.03);
+  background-color: #FEFEFE;
+  border: none;
+  -webkit-box-shadow: inset 0 -1px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: inset 0 -1px 1px rgba(0, 0, 0, 0.1);
+  font-size: 24px;
+}
+
+input:active, input:focus {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+
+input::-webkit-input-placeholder {
+  font-style: italic;
+  font-weight: 300;
+  color: #e6e6e6;
+}
+
+input::-moz-placeholder {
+  font-style: italic;
+  font-weight: 300;
+  color: #e6e6e6;
+}
+
+input::input-placeholder {
+  font-style: italic;
+  font-weight: 300;
+  color: #e6e6e6;
+}
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 15px;
+  background-color: #FEFEFE;
+  -webkit-box-shadow: inset 0 -1px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: inset 0 -1px 1px rgba(0, 0, 0, 0.1);
+}
+/*# sourceMappingURL=style.css.map */

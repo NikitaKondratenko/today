@@ -8,15 +8,42 @@
 </head>
 <body>
     <head>
-        <nav>
-            <ul>
-                <li> Homee</li>
-                <li>Products</li>
-                <li>Price</li>
-                <li>About</li>
-                <li>Contacts</li>
-            </ul>
-        </nav>
+
+        <section class="todoapp">
+            <header class="header">
+                <h1>todos</h1>
+                <div class="header-content">
+                    <input type="text" id="newTodo" placeholder="Add to do">
+                    <button id="add">Add</button>
+                </div>
+                
+            </header>
+            <div class="content">
+                    <div class="content-item__todo" id="listTodo" ></div>
+            </div>
+            <footer class="footer">
+                <div class="footer-number">
+                    <p>3 items left</p>
+                </div>
+                <div class="footer-all">
+                    <button>All</button>
+                </div>
+                <div class="footer-active">
+                    <button>Active</button>
+                </div>
+                <div class="footer-completed">
+                    <button>Completed</button>
+                </div>
+                <div class="footer-clear">
+                    <button>Clear completed</button>
+                </div>
+            </footer>
+        </section>
     </head>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400&display=swap&subset=cyrillic" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
