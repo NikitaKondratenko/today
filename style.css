@@ -47,6 +47,10 @@ header button:active, header button:focus {
           box-shadow: inset 0 -1px 1px rgba(0, 0, 0, 0.1);
 }
 
+li {
+  list-style: none;
+}
+
 .fa-trash {
   font-size: 19px;
   color: #000;
@@ -67,6 +71,31 @@ header button:active, header button:focus {
 
 .fa-trash:hover, .fa-trash:active, .fa-trash:focus {
   color: rgba(175, 47, 47, 0.5);
+}
+
+.fa-check {
+  font-size: 18px;
+  position: absolute;
+  margin: 16px 0 0 15px;
+  padding: 4px;
+  border-radius: 50%;
+  border: 3px solid #000;
+  cursor: pointer;
+  opacity: .1;
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+
+.fa-check:hover, .fa-check:active, .fa-check:focus {
+  color: #188A00;
+  opacity: .3;
+  border: 3px solid #188A00;
+}
+
+.activeCheck {
+  color: #188A00;
+  opacity: .3;
+  border: 3px solid #188A00;
 }
 
 .newTodoList {
@@ -111,15 +140,68 @@ input::input-placeholder {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  padding: 0 15px;
+  width: auto;
+  height: 45px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0 15px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   background-color: #FEFEFE;
   -webkit-box-shadow: inset 0 -1px 1px rgba(0, 0, 0, 0.1);
           box-shadow: inset 0 -1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.footer .activFooter button {
+  -webkit-box-shadow: 0 0px 3px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0px 3px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(175, 47, 47, 0.15);
+}
+
+.footer button {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
+  width: auto;
+  height: auto;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 3px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.footer button:hover, .footer button:active, .footer button:focus {
+  -webkit-box-shadow: 0 0px 3px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0px 3px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(175, 47, 47, 0.15);
+  outline: none;
+}
+
+.footer-counter p {
+  font-style: italic;
+  opacity: .8;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.footer-all {
+  overflow: hidden;
+}
+
+.footer-active {
+  overflow: hidden;
+}
+
+.footer-completed {
+  overflow: hidden;
+}
+
+.footer-clear {
+  overflow: hidden;
 }
 /*# sourceMappingURL=style.css.map */

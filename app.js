@@ -1,53 +1,93 @@
 let todos = [];
 let todoValue;
 let id = 0;
+let idLi;
+let counter;
 
-function TodoItem(completed, remove, value, id) {
+function createTodoItem(completed, remove, value, id) {
   this.completed = completed;
   this.remove = remove;
   this.value = value;
   this.id = id; 
 }
 
-function clearTodoList() {
+function clearInput() {
   document.getElementById('newTodo').value = "";
 }
 
-function todoList() {
+function createTodoList() {
   listTodo.innerHTML = '';
   for (let todo of todos) {
-    $('#listTodo').append(`<input type="text" id="newTodo" class="newTodoList" value="${todo.value}">
-                           <div id="remove"><i class="fa fa-trash"></i></div>`);
+    $('#listTodo').append(`<li id="${todo.id}"><i class="fa fa-check" id="checkTodo"></i><input type="text"  class="newTodoList" value="${todo.value}">
+                           <i class="fa fa-trash"></i></li>`);
   };
+  counterTodo();
 }
 
 $('#add').on('click', function() {
   todoValue = document.getElementById('newTodo').value;
   if (todoValue !== '') {
-    addList(todoValue);
+    addTodo(todoValue);
   } 
 })
 
-function addList(todoValue) {
+$('#newTodo').on('keypress', function(e) {
+  todoValue = document.getElementById('newTodo').value;
+  if(e.keyCode == 13 && todoValue !== '') {
+    addTodo(todoValue);
+  }
+})
+
+function addTodo(todoValue) {
   id = ++id;
-  let todo = new TodoItem(false, false, todoValue, id);
+  let todo = new createTodoItem(false, false, todoValue, id);
     todos.push(todo);
-    todoList();
-    clearTodoList();
+    createTodoList();
+    clearInput();
     console.log(todo);
 }
 
-$('.fa-trash:before').on('click', function() {
-  alert(1);
-});
-
-function remove() {
-  todos.forEach( function(todo, i, todos) {
-    if(todo.remove == true) {
-      delete todos[i];
+$('body').on('click', '.fa-trash', function () {
+  idLi = $(this).parent().attr(`id`);
+  todos.forEach(function(todo) {
+    if(todo.id == idLi) {
+      todo.remove = true;
     }
   });
+  let newTodos = todos.filter(function(todo) {
+    if(todo.remove == false) {
+      return true;
+    }; 
+  });
+  todos = newTodos;
+  createTodoList();
+});
+
+function counterTodo() {
+  counterDOM.innerHTML = '';
+  counter = todos.length;
+  return counterDOM.innerHTML = `<p>${counter} items left</p>`;
 }
+
+$('#allTodo').on('click', function () {
+  createTodoList();
+});
+
+$('#activeTodo').on('click', function () {
+  createTodoList();
+});
+
+$('body').on('click', '.fa-check', function () {
+  idLi = $(this).parent().attr(`id`);
+  todos.forEach(function(todo) {
+    if(todo.id == idLi) {
+      todo.completed = true;
+    }
+  });
+  this.style.color = '#188A00';
+  this.style.opacity = '.3';
+  this.style.border = '3px solid #188A00';
+});
 
 
 
