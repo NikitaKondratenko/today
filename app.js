@@ -54,12 +54,12 @@ $('body').on('click', '.fa-trash', function () {
       todo.remove = true;
     }
   });
-  let newTodos = todos.filter(function(todo) {
+  let removeTodos = todos.filter(function(todo) {
     if(todo.remove == false) {
       return true;
     }; 
   });
-  todos = newTodos;
+  todos = removeTodos;
   createTodoList();
 });
 
@@ -71,10 +71,17 @@ function counterTodo() {
 
 $('#allTodo').on('click', function () {
   createTodoList();
+  console.log(todos);
 });
 
 $('#activeTodo').on('click', function () {
-  createTodoList();
+  let activeTodos = todos.filter(function(todo) {
+    if(todo.completed == false) {
+      return true;
+    }
+  });
+  todos = activeTodos;
+  createTodoList(todos);
 });
 
 $('body').on('click', '.fa-check', function () {
